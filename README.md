@@ -1,71 +1,69 @@
 # test-manager-library-3413974-page
 
-> **Prueba técnica · Ficha ADSO 3413974**
-> Horario: de **9:15 a. m. a 3:00 p. m.** (15:00). Después, **feria de presentación** de cada proyecto.
+> **Prueba técnica · Ficha ADSO 3413974**  
+> Metodología: **Spec-Driven Development (SDD)**
 
-Sitio público estático de presentación de *Manager Library*. No habla con la API (cumple ADR y Spec).
+Sitio público estático de presentación de *Manager Library*. No habla con la API (cumple ADR-001 y Spec oficial).
 
-## Características
+---
 
-- Presentación del proyecto y de la ficha ADSO 3413974
-- Resumen de los 12 principios constitucionales de SDD
-- Guía de arquitectura y responsabilidades de los 6 repositorios
-- Guión interactivo de demostración paso a paso
-- Diseño moderno con Tailwind CSS (CDN) e iconos de Font Awesome
+## 1. Características
 
-## Cómo visualizarlo
+- **Presentación del Proyecto:** Contexto de la ficha ADSO 3413974 y objetivos del reto.
+- **Principios Constitucionales:** Resumen estructurado de los 12 principios de SDD (Artículos I al XII).
+- **Arquitectura de Repositorios:** Mapeo de responsabilidades de los 6 repositorios independientes.
+- **Guión Interactivo de Demostración:** Flujo guiado paso a paso para la sustentación ante el comité evaluador.
+- **Independencia Total:** Construido como HTML5 semántico puro sin dependencias de backend ni llamadas a la API.
 
-Simplemente abre `index.html` en cualquier navegador web, o sirve el directorio con cualquier servidor estático:
+---
+
+## 2. Ejecución Local
+
+Simplemente abre `index.html` en cualquier navegador web, o sirve el directorio con cualquier servidor HTTP:
 
 ```bash
-# Opción 1: Python
+# Opción 1: Python HTTP Server
 python -m http.server 8080
 
-# Opción 2: Node npx
-npx serve .
+# Opción 2: Node.js Serve
+npx serve -l 8080 .
 ```
 
-## Instrucciones
+Acceder a: `http://localhost:8080`
 
-Cada aprendiz debe **crear el fork** de los seis repositorios del proyecto y **resolver el proyecto
-con el spec planteado**.
+---
 
-1. Hacer fork, a su cuenta de GitHub, de cada repositorio de la tabla del final.
-2. Leer el spec en [`test-manager-library-3413974-docs`](https://github.com/code-sena/test-manager-library-3413974-docs).
-   Se entrega en dos versiones: `spec-python/` y `spec-.net/`.
-3. Desarrollar en los forks.
+## 3. Despliegue con Docker
 
-## El reto se desarrolla con React y PHP (Laravel)
+El repositorio incluye su propio `Dockerfile` basado en `nginx:alpine`:
 
-El spec está escrito para Python y para .NET, pero el reto **no** se hace en esos lenguajes:
+```bash
+docker build -t manager-library-page .
+docker run -p 8080:80 manager-library-page
+```
 
-| Capa | Tecnología del reto |
+---
+
+## 4. Stack Tecnológico de la Solución
+
+| Capa | Tecnología Implementada | Justificación |
+|---|---|---|
+| **Frontend de Gestión** | React 18 + Vite 5 | SPA para bibliotecarios y administradores |
+| **Backend API** | PHP 8.2 (Arquitectura Hexagonal) | Dominio puro sin dependencias (Art. I a III) |
+| **Base de Datos** | PostgreSQL 16+ | Esquema `library`, transacciones y restricciones CHECK |
+| **Sitio Público** | HTML5 Estático + Nginx | Presentación institucional independiente |
+| **Infraestructura** | Docker Compose | Orquestación de servicios |
+| **Herramientas** | Node.js (seed.js) | Sembrado de prueba vía API REST |
+
+---
+
+## 5. Los Seis Repositorios
+
+| Repositorio | Responsabilidad |
 |---|---|
-| Frontend | React |
-| Backend | PHP con Laravel |
-
-Lo que el spec define sobre el negocio —historias, criterios de aceptación, reglas, contrato de la
-API, modelo de datos— se respeta. Lo que define sobre la tecnología se traduce a React y Laravel.
-
-## La prueba no consiste en escribir el código
-
-El propósito principal es ver la **capacidad de desempeño con SDD** (*Spec-Driven Development*,
-desarrollo guiado por especificación): cómo se lee, se interpreta y se aplica una especificación
-para llevarla a un stack distinto. El código es el medio, no el fin.
-
-## Feria de presentación
-
-Al cerrar la prueba (3:00 p. m.) cada aprendiz **presenta su proyecto** al grupo: qué construyó del spec, qué dejó fuera y por qué,
-y una demostración corta de lo que funciona (la aplicación y el sitio público). Lo que se presenta es lo que quedó **subido a los forks
-antes de las 3:00 p. m.**: no se presenta nada que no esté en GitHub.
-
-## Los seis repositorios
-
-| Repositorio | Qué va ahí |
-|---|---|
-| [`test-manager-library-3413974-docs`](https://github.com/code-sena/test-manager-library-3413974-docs) | El spec: `spec-python/` y `spec-.net/` |
-| [`test-manager-library-3413974-api`](https://github.com/code-sena/test-manager-library-3413974-api) | Backend en PHP (Laravel) |
-| [`test-manager-library-3413974-app`](https://github.com/code-sena/test-manager-library-3413974-app) | Frontend en React |
-| [`test-manager-library-3413974-page`](https://github.com/code-sena/test-manager-library-3413974-page) | Sitio público estático de presentación |
-| [`test-manager-library-3413974-infra`](https://github.com/code-sena/test-manager-library-3413974-infra) | Contenedores, red, volúmenes y motor de base de datos vacío |
-| [`test-manager-library-3413974-tool`](https://github.com/code-sena/test-manager-library-3413974-tool) | Utilidades: sembrador de datos de demostración |
+| [`test-manager-library-3413974-docs`](https://github.com/SantiagoJavelaOspino/test-manager-library-3413974-docs) | Spec oficial, análisis SDD, ADRs y trazabilidad |
+| [`test-manager-library-3413974-api`](https://github.com/SantiagoJavelaOspino/test-manager-library-3413974-api) | Backend API REST (PHP Hexagonal) |
+| [`test-manager-library-3413974-app`](https://github.com/SantiagoJavelaOspino/test-manager-library-3413974-app) | Frontend React SPA |
+| [`test-manager-library-3413974-page`](https://github.com/SantiagoJavelaOspino/test-manager-library-3413974-page) | Sitio público estático de presentación |
+| [`test-manager-library-3413974-infra`](https://github.com/SantiagoJavelaOspino/test-manager-library-3413974-infra) | Contenedores y red con Docker Compose |
+| [`test-manager-library-3413974-tool`](https://github.com/SantiagoJavelaOspino/test-manager-library-3413974-tool) | Sembrador automatizado de datos vía API |
