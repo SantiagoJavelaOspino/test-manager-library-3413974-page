@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Library — Prueba Técnica SDD · ADSO 3413974</title>
+    <meta name="description" content="Sitio público de presentación de Manager Library. Sistema de gestión bibliotecaria desarrollado bajo Spec-Driven Development (SDD) con React y Laravel.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        sena: '#39A900',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
+                    <i class="fa-solid fa-book-bookmark text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-slate-900 block leading-tight">Manager Library</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-emerald-600">SENA · ADSO 3413974</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#inicio" class="hover:text-emerald-600 transition">Inicio</a>
+                <a href="#alcance" class="hover:text-emerald-600 transition">Alcance & Reglas</a>
+                <a href="#arquitectura" class="hover:text-emerald-600 transition">Arquitectura SDD</a>
+                <a href="#repositorios" class="hover:text-emerald-600 transition">6 Repositorios</a>
+                <a href="#demostracion" class="hover:text-emerald-600 transition">Demostración</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="http://localhost:3000" target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 shadow-md shadow-emerald-600/20 transition flex items-center gap-2">
+                    <span>Abrir Aplicación</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-16 pb-24 overflow-hidden">
+        <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.emerald.100),theme(colors.slate.50))] opacity-60"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                Prueba Técnica Oficial · Metodología SDD
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
+                Gestión Bibliotecaria Rigurosa Guiada por Especificación
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Implementación integral del reto <strong class="text-slate-900">Manager Library</strong> para la ficha <strong class="text-emerald-700">ADSO 3413974</strong>. Traduciendo la especificación formal a una arquitectura limpia en <strong class="text-slate-900">PHP Laravel</strong> y <strong class="text-slate-900">React</strong>.
+            </p>
+
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <a href="http://localhost:3000" target="_blank" class="px-7 py-3.5 rounded-xl bg-emerald-600 text-white font-bold text-base hover:bg-emerald-700 shadow-xl shadow-emerald-600/30 transition flex items-center gap-3">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Ver Sistema en Vivo (App)</span>
+                </a>
+                <a href="#arquitectura" class="px-7 py-3.5 rounded-xl bg-white border border-slate-300 text-slate-700 font-bold text-base hover:bg-slate-100 shadow-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Ver Arquitectura & ADRs</span>
+                </a>
+            </div>
+
+            <!-- Badges -->
+            <div class="mt-12 flex flex-wrap justify-center items-center gap-6 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                <div class="flex items-center gap-2"><i class="fa-brands fa-php text-indigo-600 text-base"></i> PHP 8.2 / Laravel 10</div>
+                <div class="flex items-center gap-2"><i class="fa-brands fa-react text-sky-500 text-base"></i> React 18 SPA</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-database text-blue-600 text-base"></i> PostgreSQL 16</div>
+                <div class="flex items-center gap-2"><i class="fa-brands fa-docker text-cyan-600 text-base"></i> Docker & Compose</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-600 text-base"></i> JWT & Onion Arch</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilares Constitucionales y Reglas -->
+    <section id="alcance" class="py-20 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-600 text-xs font-extrabold uppercase tracking-widest">Principios Fundamentales</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">La Constitución de Manager Library</h2>
+                <p class="text-slate-600 mt-4">Principios innegociables aplicados estrictamente en el código y en la base de datos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-300 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Dominio sin Dependencias</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Artículo I: El núcleo del negocio no importa frameworks ni librerías de terceros. Entidades, objetos de valor y reglas se prueban sin base de datos ni servidor.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-300 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Snapshot Histórico Congelado</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Artículo VIII & ADR-004: Cada línea de préstamo congela título, ISBN y categoría del momento. Renombrar un libro en el catálogo nunca adultera reportes pasados.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-300 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Concurrencia Optimista</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        ADR-002 & RNF-2: Dos bibliotecarios prestando el último ejemplar a la vez: uno gana (201) y el otro recibe 409. Respaldado por el CHECK <code>0 &le; disponibles &le; total</code> en PostgreSQL.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tabla de Reglas de Negocio -->
+            <div class="mt-16 bg-slate-900 rounded-2xl p-8 text-white shadow-xl">
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-scale-balanced text-emerald-400"></i>
+                    <span>Reglas de Negocio Clave Validadas en el Sistema</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div><strong>RN-1 Stock Estricto:</strong> Disponibles siempre entre 0 y el total. El motor rechaza cualquier desbordamiento.</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div><strong>RN-2 Plazo & Límite:</strong> 14 días corridos por préstamo. Máximo 3 libros simultáneos sin devolver por socio.</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div><strong>RN-3 Bloqueo por Mora:</strong> Cualquier socio con un libro vencido queda inhabilitado para nuevos préstamos (HTTP 409).</div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div><strong>RN-5 Inmutabilidad:</strong> Préstamos y devoluciones jamás se eliminan físicamente. Los libros usan baja lógica (<code>deleted_at</code>).</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div><strong>Artículo VII Estado Calculado:</strong> El estado (<code>open</code>, <code>overdue</code>, <code>closed</code>) se calcula al vuelo, sin columna persistida.</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                            <div><strong>Artículo V Motor Vacío:</strong> <code>infra</code> solo arranca la BD limpia; todas las tablas provienen de migraciones de la API.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Los 6 Repositorios -->
+    <section id="repositorios" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-600 text-xs font-extrabold uppercase tracking-widest">Ecosistema Modular</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Los Seis Repositorios del Reto</h2>
+                <p class="text-slate-600 mt-4">Arquitectura distribuida en repositorios independientes con responsabilidades desacopladas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- DOCS -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-md bg-purple-100 text-purple-700 text-xs font-bold font-mono">DOCS</span>
+                        <i class="fa-solid fa-file-contract text-slate-400"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Especificación & ADRs</h4>
+                    <p class="text-slate-600 text-sm mb-4">Fuente de verdad formal: contratos de API, modelo físico PostgreSQL, principios y matriz SDD.</p>
+                    <span class="text-xs text-purple-600 font-semibold flex items-center gap-1"><i class="fa-solid fa-check"></i> 100% Documentado</span>
+                </div>
+
+                <!-- API -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-md bg-indigo-100 text-indigo-700 text-xs font-bold font-mono">API</span>
+                        <i class="fa-solid fa-server text-slate-400"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Backend Laravel 10</h4>
+                    <p class="text-slate-600 text-sm mb-4">Arquitectura Hexagonal/Cebolla, endpoints <code>/api/v1</code>, JWT, migraciones, control de inventario y reportes.</p>
+                    <span class="text-xs text-indigo-600 font-semibold flex items-center gap-1"><i class="fa-solid fa-check"></i> PHP 8.2 + PostgreSQL</span>
+                </div>
+
+                <!-- APP -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-md bg-sky-100 text-sky-700 text-xs font-bold font-mono">APP</span>
+                        <i class="fa-solid fa-desktop text-slate-400"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Frontend React SPA</h4>
+                    <p class="text-slate-600 text-sm mb-4">Panel para admin y bibliotecario: catálogo interactivo, préstamo por carrito, devoluciones y reportes.</p>
+                    <span class="text-xs text-sky-600 font-semibold flex items-center gap-1"><i class="fa-solid fa-check"></i> React 18 + Tailwind</span>
+                </div>
+
+                <!-- PAGE -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition ring-2 ring-emerald-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-700 text-xs font-bold font-mono">PAGE (Actual)</span>
+                        <i class="fa-solid fa-globe text-emerald-500"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Sitio Público Estático</h4>
+                    <p class="text-slate-600 text-sm mb-4">Portal de presentación para la feria de proyectos. Se abre sin backend, responsivo y autónomo.</p>
+                    <span class="text-xs text-emerald-600 font-semibold flex items-center gap-1"><i class="fa-solid fa-check"></i> HTML5 / CSS3 / JS</span>
+                </div>
+
+                <!-- INFRA -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-md bg-blue-100 text-blue-700 text-xs font-bold font-mono">INFRA</span>
+                        <i class="fa-solid fa-network-wired text-slate-400"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Docker Infrastructure</h4>
+                    <p class="text-slate-600 text-sm mb-4">Orquestación con <code>docker-compose.yml</code>: PostgreSQL 16 limpio, red interna y variables seguras.</p>
+                    <span class="text-xs text-blue-600 font-semibold flex items-center gap-1"><i class="fa-solid fa-check"></i> Un solo comando</span>
+                </div>
+
+                <!-- TOOL -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-2.5 py-1 rounded-md bg-amber-100 text-amber-700 text-xs font-bold font-mono">TOOL</span>
+                        <i class="fa-solid fa-seedling text-slate-400"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Sembrador de Demostración</h4>
+                    <p class="text-slate-600 text-sm mb-4">Siembra automática vía API HTTP: &ge; 40 libros, 10 socios, 15 préstamos y 3 casos en mora comprobables.</p>
+                    <span class="text-xs text-amber-600 font-semibold flex items-center gap-1"><i class="fa-solid fa-check"></i> Script REST Autónomo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demostración & Guion para la Feria -->
+    <section id="demostracion" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-600 text-xs font-extrabold uppercase tracking-widest">Feria de Presentación (3:00 PM)</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Guion de Demostración Reproducible</h2>
+                <p class="text-slate-600 mt-4">Paso a paso de lo que se presentará en vivo ante el jurado y compañeros.</p>
+            </div>
+
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="w-9 h-9 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0">1</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Inicio de Sesión y Control de Roles (HU-01 / HU-02)</h4>
+                        <p class="text-slate-600 text-sm mt-1">Acceso como <code>admin</code> (creación de bibliotecarios) y como <code>librarian</code> con credenciales seguras emitidas vía JWT.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="w-9 h-9 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0">2</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Catálogo de Libros y Subida de Portadas (HU-03 / HU-04)</h4>
+                        <p class="text-slate-600 text-sm mt-1">Búsqueda rápida por título/autor, filtro por las 5 categorías oficiales y carga de portada binaria opaca.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="w-9 h-9 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0">3</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Flujo de Préstamo con Reglas Estrictas (HU-06)</h4>
+                        <p class="text-slate-600 text-sm mt-1">Demostración en vivo de las validaciones: descuento atómico de stock, tope de 3 libros por socio y bloqueo automático si el socio tiene libros vencidos.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="w-9 h-9 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0">4</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Devolución y Libros Vencidos (HU-07 / HU-09)</h4>
+                        <p class="text-slate-600 text-sm mt-1">Devolución idempotente por línea, actualización de disponibles y panel operativo de libros en mora ordenados por días de retraso.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="w-9 h-9 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0">5</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Reporte Inmutable de Más Prestados (HU-10 / ADR-004)</h4>
+                        <p class="text-slate-600 text-sm mt-1">Generación del reporte agrupado por valores congelados, demostrando que editar el catálogo posterior no distorsiona el histórico.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-book-bookmark text-sm"></i>
+                </div>
+                <span class="font-bold text-white text-base">Manager Library</span>
+            </div>
+            <p>Servicio Nacional de Aprendizaje (SENA) · Ficha ADSO 3413974</p>
+            <p class="mt-2 text-xs text-slate-500">Desarrollado bajo la metodología Spec-Driven Development (SDD).</p>
+        </div>
+    </footer>
+
+</body>
+</html>

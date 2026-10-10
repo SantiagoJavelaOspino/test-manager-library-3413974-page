@@ -3,7 +3,27 @@
 > **Prueba técnica · Ficha ADSO 3413974**
 > Horario: de **9:15 a. m. a 3:00 p. m.** (15:00). Después, **feria de presentación** de cada proyecto.
 
-Este repositorio es el **sitio público estático** de presentación de *Manager Library*; no habla con la API. **Empieza vacío a propósito**: se construye en el fork de cada aprendiz.
+Sitio público estático de presentación de *Manager Library*. No habla con la API (cumple ADR y Spec).
+
+## Características
+
+- Presentación del proyecto y de la ficha ADSO 3413974
+- Resumen de los 12 principios constitucionales de SDD
+- Guía de arquitectura y responsabilidades de los 6 repositorios
+- Guión interactivo de demostración paso a paso
+- Diseño moderno con Tailwind CSS (CDN) e iconos de Font Awesome
+
+## Cómo visualizarlo
+
+Simplemente abre `index.html` en cualquier navegador web, o sirve el directorio con cualquier servidor estático:
+
+```bash
+# Opción 1: Python
+python -m http.server 8080
+
+# Opción 2: Node npx
+npx serve .
+```
 
 ## Instrucciones
 
